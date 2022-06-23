@@ -1,7 +1,7 @@
 import gameLogic from '../index.js';
+import getRandomNumber from '../randomNumber.js';
 
 const rules = 'Answer "yes" if the number is even, other answer "no"';
-const getRandomNumber = (max = 100) => Math.floor(Math.random() * max);
 const isNumberEven = (num) => num % 2 === 0;
 
 const brainEven = () => {
