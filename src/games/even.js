@@ -1,15 +1,15 @@
-import gameLogic from '../index.js';
-import getRandomNumber from '../randomNumber.js';
+import onGameLogic from '../index.js';
+import getRandomNumbers from '../randomNumber.js';
 
-const rules = 'Answer "yes" if the number is even, other answer "no"';
+const gameRule = 'Answer "yes" if the number is even, other answer "no"';
 const isNumberEven = (num) => num % 2 === 0;
 
-const brainEven = () => {
-  const randomNumber = getRandomNumber();
-  const rightAnswer = isNumberEven(randomNumber) ? 'yes' : 'no';
-  return [randomNumber, rightAnswer];
+const callBrainEven = () => {
+  const question = getRandomNumbers();
+  const answer = isNumberEven(question) ? 'yes' : 'no';
+  return [question, answer];
 };
 
-const startBrainEven = () => gameLogic(rules, brainEven);
+const startBrainEven = () => onGameLogic(gameRule, callBrainEven);
 
 export default startBrainEven;

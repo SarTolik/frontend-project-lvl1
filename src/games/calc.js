@@ -1,30 +1,30 @@
-import gameLogic from '../index.js';
-import getRandomNumber from '../randomNumber.js';
+import onGameLogic from '../index.js';
+import getRandomNumbers from '../randomNumber.js';
 
-const rules = 'What is the result of the expression?';
+const gameRule = 'What is the result of the expression?';
 const symbols = '+-*';
-const expect = (num1, num2, symbol) => {
-  if (symbol.toString() === '+') {
+const getCorrectSymbol = (num1, num2, symbol) => {
+  if (symbol === '+') {
     return num1 + num2;
   }
-  if (symbol.toString() === '-') {
+  if (symbol === '-') {
     return num1 - num2;
   }
-  if (symbol.toString() === '*') {
+  if (symbol === '*') {
     return num1 * num2;
   }
   return 'Unexpected symbol';
 };
 
-const brainCalc = () => {
-  const num1 = getRandomNumber();
-  const num2 = getRandomNumber();
-  const symbol = symbols[getRandomNumber(symbols.length)];
+const callBrainCalc = () => {
+  const num1 = getRandomNumbers();
+  const num2 = getRandomNumbers();
+  const symbol = symbols[getRandomNumbers(0, symbols.length)];
   const question = `${num1} ${symbol} ${num2}`;
-  const answer = expect(num1, num2, symbol).toString();
+  const answer = getCorrectSymbol(num1, num2, symbol).toString();
   return [question, answer];
 };
 
-const startBrainCalc = () => gameLogic(rules, brainCalc);
+const startBrainCalc = () => onGameLogic(gameRule, callBrainCalc);
 
 export default startBrainCalc;
