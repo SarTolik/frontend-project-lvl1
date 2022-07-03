@@ -16,8 +16,9 @@ const isPrime = (num) => {
 };
 
 const callBrainPrime = () => {
-  const question = getRandomNumbers();
-  const answer = isPrime(question) ? 'yes' : 'no';
+  const num = getRandomNumbers();
+  const question = num.toString();
+  const answer = isPrime(num) ? 'yes' : 'no';
   return [question, answer];
 };
 
