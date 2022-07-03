@@ -12,7 +12,7 @@ const onGameLogic = (gameRule, getGameMech) => {
 
     console.log(`Question: ${gameTask}`);
 
-    const userAnswer = readlineSync.question('You answer: ');
+    const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer !== correctAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'\nLet's try again, ${userName}!`);
       return;
