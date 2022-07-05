@@ -1,5 +1,5 @@
 import onGameLogic from '../index.js';
-import getRandomNumbers from '../randomNumber.js';
+import getRandomNumber from '../randomNumber.js';
 
 const gameRule = 'What number is missing in the progression?';
 
@@ -14,11 +14,11 @@ const genSeqence = (firstNum, step, massLength) => {
 };
 
 const callBrainProgression = () => {
-  const length = getRandomNumbers(5, 11);
-  const first = getRandomNumbers(1, 11);
-  const step = getRandomNumbers(1, 11);
+  const length = getRandomNumber(5, 11);
+  const first = getRandomNumber(1, 11);
+  const step = getRandomNumber(1, 11);
   const progression = genSeqence(first, step, length);
-  const randomIndex = getRandomNumbers(0, progression.length);
+  const randomIndex = getRandomNumber(0, progression.length);
   const answer = progression[randomIndex].toString();
   progression[randomIndex] = '..';
   const question = progression.join(' ');

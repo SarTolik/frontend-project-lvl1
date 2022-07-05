@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const onGameLogic = (gameRule, getGameMech) => {
+const gameLogic = (gameRule, getGameMech) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   const roundsCount = 3;
@@ -22,4 +22,4 @@ const onGameLogic = (gameRule, getGameMech) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default onGameLogic;
+export default gameLogic;

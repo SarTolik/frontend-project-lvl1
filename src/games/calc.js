@@ -1,9 +1,9 @@
-import onGameLogic from '../index.js';
-import getRandomNumbers from '../randomNumber.js';
+import gameLogic from '../index.js';
+import getRandomNumber from '../randomNumber.js';
 
 const gameRule = 'What is the result of the expression?';
 const symbols = '+-*';
-const getCorrectSymbol = (num1, num2, symbol) => {
+const calculate = (num1, num2, symbol) => {
   if (symbol === '+') {
     return num1 + num2;
   }
@@ -17,14 +17,14 @@ const getCorrectSymbol = (num1, num2, symbol) => {
 };
 
 const callBrainCalc = () => {
-  const num1 = getRandomNumbers();
-  const num2 = getRandomNumbers();
-  const symbol = symbols[getRandomNumbers(0, symbols.length)];
+  const num1 = getRandomNumber();
+  const num2 = getRandomNumber();
+  const symbol = symbols[getRandomNumber(0, symbols.length)];
   const question = `${num1} ${symbol} ${num2}`;
-  const answer = getCorrectSymbol(num1, num2, symbol).toString();
+  const answer = calculate(num1, num2, symbol).toString();
   return [question, answer];
 };
 
-const startBrainCalc = () => onGameLogic(gameRule, callBrainCalc);
+const startBrainCalc = () => gameLogic(gameRule, callBrainCalc);
 
 export default startBrainCalc;

@@ -1,5 +1,5 @@
 import onGameLogic from '../index.js';
-import getRandomNumbers from '../randomNumber.js';
+import getRandomNumber from '../randomNumber.js';
 
 const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -13,7 +13,7 @@ const isPrime = (num) => {
 };
 
 const callBrainPrime = () => {
-  const question = getRandomNumbers();
+  const question = getRandomNumber();
   const answer = isPrime(question) ? 'yes' : 'no';
   return [question, answer];
 };
